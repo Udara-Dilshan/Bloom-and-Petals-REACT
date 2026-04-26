@@ -1,0 +1,238 @@
+.contact {
+  padding: 6rem 2rem;
+  background: var(--blush);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__deco {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.contact__deco img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact__deco-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--blush);
+  opacity: 0.4;
+}
+
+.contact__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1.4fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* ── Info ── */
+.contact__title {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact__title em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.contact__body {
+  font-size: 1.2em;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.contact__detail-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact__detail-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.contact__detail-value {
+  font-size: 1rem;
+  color: var(--bark);
+  font-weight: 500;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+a.contact__detail-value:hover {
+  color: var(--rose);
+}
+
+/* ── Center image ── */
+.contact__image {
+  width: 240px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  align-self: stretch;
+}
+
+.contact__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+/* ── Form ── */
+.contact__form {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Form fields ── */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-field label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bark);
+  letter-spacing: 0.02em;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+  resize: vertical;
+  outline: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #c8bfc4;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(232, 87, 122, 0.12);
+  background: white;
+}
+
+.form-field--error input,
+.form-field--error textarea {
+  border-color: #e53935;
+}
+
+.form-field__error {
+  font-size: 0.75rem;
+  color: #e53935;
+}
+
+/* ── Submit ── */
+.contact__submit {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.contact__submit--loading {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* ── Success ── */
+.contact__success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #a5d6a7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .contact__inner {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .contact__image {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact__form {
+    padding: 1.75rem;
+  }
+
+  .contact__form-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

@@ -1,0 +1,135 @@
+.categories {
+  padding: 8rem 1rem;
+  background: var(--white);
+}
+
+.categories__inner {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.categories__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.categories__header .section-title {
+  margin-top: 0.15rem;
+}
+
+/* ── Grid ── */
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Card ── */
+.cat-card {
+  position: relative;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg, var(--petal));
+  text-decoration: none;
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.5s ease both;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+
+.cat-card:hover,
+.cat-card--hovered {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(60, 30, 40, 0.14);
+  border-color: var(--accent, var(--rose));
+}
+
+.cat-card__img-wrap {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.cat-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.cat-card:hover .cat-card__img-wrap img {
+  transform: scale(1.08);
+}
+
+.cat-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+}
+
+.cat-card__content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.cat-card__name {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.cat-card__arrow {
+  display: flex;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent, var(--rose));
+  color: white;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  transition:
+    transform 0.25s,
+    background 0.25s;
+}
+
+.cat-card:hover .cat-card__arrow {
+  transform: translateX(3px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .categories__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .categories {
+    padding: 4rem 1.5rem;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .cat-card__img-wrap {
+    height: 230px;
+  }
+}

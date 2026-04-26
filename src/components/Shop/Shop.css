@@ -1,0 +1,221 @@
+.featured {
+  padding: 6rem 2rem;
+  background: var(--cream);
+}
+
+.featured__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.featured__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ── Grid ── */
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* ── Product Card ── */
+.product-card {
+  background: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.5s ease both;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Image Wrap ── */
+.product-card__img-wrap {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: var(--petal);
+}
+
+.product-card__img-wrap img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card__img-wrap img {
+  transform: scale(1.07);
+}
+
+/* ── Tag ── */
+.product-card__tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--rose);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+}
+
+/* ── Wishlist ── */
+.product-card__wish {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--muted);
+  transition: all 0.25s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card__wish:hover,
+.product-card__wish--active {
+  color: var(--rose);
+  background: white;
+  transform: scale(1.1);
+}
+
+.product-card__wish--active {
+  color: var(--rose);
+}
+
+/* ── Hover actions ── */
+.product-card__hover-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  display: flex;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .product-card__hover-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card__quick {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: var(--bark);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.product-card__quick:hover {
+  background: white;
+}
+
+/* ── Body ── */
+.product-card__body {
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.product-card__name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-align: center;
+  color: var(--bark);
+  margin-bottom: 0.3rem;
+}
+
+.product-card__stars {
+  color: #f5a623;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-card__price {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--rose);
+}
+
+/* ── Add to cart ── */
+.product-card__add {
+  background: var(--rose-light);
+  color: var(--rose);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  transition: all 0.25s;
+}
+
+.product-card__add:hover {
+  background: var(--rose);
+  color: white;
+  transform: scale(1.05);
+}
+
+.product-card__add--done {
+  background: #d4edda;
+  color: #2e7d32;
+}
+
+/* ── Footer ── */
+.featured__footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .featured {
+    padding: 4rem 1.5rem;
+  }
+
+  .featured__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card__img-wrap {
+    height: 260px;
+  }
+}
