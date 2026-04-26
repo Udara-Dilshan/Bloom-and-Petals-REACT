@@ -59,7 +59,7 @@ const About = () => {
         {/* ── Left: Video / Image ── */}
         <div className="about__media">
           <div className="about__img-frame">
-            <img src="src/assets/logo.png" alt="Florist arranging flowers" />
+            <img src="logo.png" alt="Florist arranging flowers" />
             <div className="about__img-overlay" />
           </div>
 

@@ -76,7 +76,7 @@ const Hero = () => {
           <div className="hero__image-bg" />
           <div className="hero__image">
             <img
-              src="src/assets/about.png"
+              src="about.png"
               alt="Beautiful flower bouquet"
               loading="eager"
             />

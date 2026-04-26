@@ -8,7 +8,7 @@ const categories = [
     color: "#FFF0F3",
     accent: "#E8577A",
     emoji: "🎂",
-    img: "src/assets/1.1.png",
+    img: "1.1.png",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const categories = [
     color: "#FFF5F0",
     accent: "#D4567A",
     emoji: "💍",
-    img: "src/assets/1.2.png",
+    img: "1.2.png",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const categories = [
     color: "#FFFFF0",
     accent: "#C9A84C",
     emoji: "🎉",
-    img: "src/assets/1.3.png",
+    img: "1.3.png",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const categories = [
     color: "#F5F5FF",
     accent: "#6B7DB3",
     emoji: "🕊️",
-    img: "src/assets/1.4.png",
+    img: "1.4.png",
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const categories = [
     color: "#F0FFF5",
     accent: "#4CAF8C",
     emoji: "💐",
-    img: "src/assets/1.5.png",
+    img: "1.5.png",
   },
 ];
 

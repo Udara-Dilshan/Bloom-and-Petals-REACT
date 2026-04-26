@@ -68,7 +68,7 @@ const Contact = () => {
     <section id="contact" className="contact">
       {/* Decorative petal image */}
       <div className="contact__deco" aria-hidden="true">
-        <img src="src/assets/contact.png" alt="" />
+        <img src="contact.png" alt="" />
         <div className="contact__deco-overlay" />
       </div>
 
@@ -113,7 +113,7 @@ const Contact = () => {
 
         {/* Center image */}
         <div className="contact__image">
-          <img src="src/assets/contact.png" alt="Flower arrangement" />
+          <img src="contact.png" alt="Flower arrangement" />
         </div>
 
         {/* Right: form */}
